@@ -24,11 +24,14 @@ local create_term = function(bufnr, cmd)
             title = "quickterm"
         })
 
+    local catched_pwd = vim.fn.expand('%:p:h')
+
     vim.api.nvim_set_current_win(winh)
     vim.bo.filetype = "quickterm"
 
     vim.fn.termopen(cmd, {
-        detach = 1
+        detach = 1,
+        cwd = catched_pwd
     })
 end
 
