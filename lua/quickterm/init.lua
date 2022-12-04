@@ -25,6 +25,7 @@ local create_term = function(bufnr, cmd)
         })
 
     vim.api.nvim_set_current_win(winh)
+    vim.bo.filetype = "quickterm"
 
     vim.fn.termopen(cmd, {
         detach = 1
