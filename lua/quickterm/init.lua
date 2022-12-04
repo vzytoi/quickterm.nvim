@@ -27,7 +27,9 @@ local create_term = function(bufnr, cmd)
     local catched_pwd = vim.fn.expand('%:p:h')
 
     vim.api.nvim_set_current_win(winh)
+
     vim.bo.filetype = "quickterm"
+    vim.bo.buftype = "nofile"
 
     vim.fn.termopen(cmd, {
         detach = 1,
