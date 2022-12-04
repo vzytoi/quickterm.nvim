@@ -26,7 +26,7 @@ local create_term = function(bufnr, cmd)
 
     vim.api.nvim_set_current_win(winh)
 
-    vim.fn.termopen(cmd .. "\n", {
+    vim.fn.termopen(cmd, {
         detach = 1
     })
 end
@@ -40,12 +40,16 @@ M.commands = {
 }
 
 M.open = function()
-    local bufnr = create_buf()
     local cmd = M.commands[vim.bo.filetype]
 
-    create_term(bufnr, cmd)
-end
+    -- si le language n'est pas supporté
+    if not cmd then
+        return
+    end
 
-M.open()
+    local bufnr = create_buf()
+
+    create_term(bufnr, cmd .. "\n")
+end
 
 return M
