@@ -7,7 +7,7 @@ https://user-images.githubusercontent.com/65293868/205468151-3b85ec08-4a12-4c0c-
 
 ## Installation
 
-```lua 
+```lua
 use "vzytoi/quickterm.nvim"
 ```
 
@@ -17,7 +17,7 @@ use "vzytoi/quickterm.nvim"
 require('quickterm').open()
 ```
 
-## Support 
+## Support
 
 If your favorite language is missing from the list,<br/>
 please make an issue or a PR, I will answer as soon as possible.
@@ -29,3 +29,4 @@ please make an issue or a PR, I will answer as soon as possible.
 | lua        | lua     |
 | python     | python3 |
 | ocaml      | utop    |
+| c          | picoc   |

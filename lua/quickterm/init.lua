@@ -1,5 +1,7 @@
 local M = {}
 
+local commands = require('quickterm.commands')
+
 local create_buf = function()
     return vim.api.nvim_create_buf(false, true)
 end
@@ -37,16 +39,8 @@ local create_term = function(bufnr, cmd)
     })
 end
 
-M.commands = {
-    javascript = "node",
-    typescript = "ts-node",
-    lua = "lua",
-    python = "python3",
-    ocaml = "utop"
-}
-
 M.open = function()
-    local cmd = M.commands[vim.bo.filetype]
+    local cmd = commands[vim.bo.filetype]
 
     -- si le language n'est pas supporté
     if not cmd then
